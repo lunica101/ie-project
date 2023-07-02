@@ -4,7 +4,7 @@ services:
       init: true
       container_name: postgres-con
       hostname: localhost
-      restart: always
+    #   restart: always
       ports:
           - 5432:5432
       environment:
@@ -17,7 +17,7 @@ services:
       init: true
       container_name: pg-con
       hostname: pg
-      restart: always
+    #   restart: always
       environment:
           - PGADMIN_DEFAULT_EMAIL=${PGADMIN_DEFAULT_EMAIL:- }
           - PGADMIN_DEFAULT_PASSWORD=${PGADMIN_DEFAULT_PASSWORD:-qwerty1234}
