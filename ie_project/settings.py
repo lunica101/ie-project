@@ -39,7 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'cloudinary_storage'
     'django.contrib.staticfiles',
+    'cloudinary',
+    'app'
 ]
 
 MIDDLEWARE = [
@@ -85,7 +88,12 @@ DATABASES = {
         'HOST': os.environ.get('DB_HOST', 'localhost'),
         'PORT': os.environ.get('DB_PORT', 5432)
     },
-    # 'render_db': dj_database_url.parse(os.environ.get("DATABASE_URL", 'postgres://ml_project_t2bd_user:nSTOcpI1diTcLn09eB3BIqxIZOX4KcqU@dpg-cie242d9aq0ce39i7upg-a.oregon-postgres.render.com/ml_project_t2bd'))
+}
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'your_cloud_name',
+    'API_KEY': 'your_api_key',
+    'API_SECRET': 'your_api_secret'
 }
 
 DATABASE_URL = os.environ.get("DATABASE_URL")
