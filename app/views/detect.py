@@ -3,7 +3,6 @@ from django import forms
 from django.contrib.auth.models import User
 
 
-def login_page(request):
-    return render(request, 'pages/login.html')
-
+def detect_page(request):
+    return render(request, 'pages/detection.html')
 

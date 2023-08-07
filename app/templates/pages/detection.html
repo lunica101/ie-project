@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thai Silk DETECTION</title>
+</head>
+    {% include '../components/mdb.html' %}
+    <style>
+        body{
+            background-color: #cdeccdae;
+        }
+        
+        @media (min-width: 768px) {
+        .gradient-form {
+        height: 100vh !important;
+        }
+    }
+    </style>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light"style="background-color: #F0F8FF;">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Image Detection</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <a href="/">Detection page  </a>
+                <a href="result/">Result page  </a>
+                <i class="material-icons">favorite  </i>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <header id="header" class="card">
+            <h1 align = "center">Thai Silk Image Detection</h1>
+            <h5 align = "center">This website is provideded the Patterns and Defects</h5>
+    </div>
+        <div align = "center">
+            <label for "file" >Select the picture for detecting the pattern of Thai's silk surface</label>
+            <input type="file" align = "center">
+        </div>
+        <div align = "center">
+            <input type ="submit" value="press to submit">
+        </div>
+    </header>
+    
+</body>
+</html>
