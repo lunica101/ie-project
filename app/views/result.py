@@ -3,7 +3,5 @@ from django import forms
 from django.contrib.auth.models import User
 
 
-def login_page(request):
-    return render(request, 'pages/login.html')
-
-
+def result_page(request):
+    return render(request, 'pages/showresult.html')
