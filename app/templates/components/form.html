@@ -1,0 +1,34 @@
+<style>
+    div.mb-3 {
+        max-width: 800px;
+        margin: auto;
+        border: 3px solid #F0FFF0;
+    }
+
+    div.fromcontrol {
+        max-width: 500px;
+        margin: auto;
+        border: 3px solid #E6E6FA;
+    }
+</style>
+
+<div align="center">
+    <p>Select the picture for detecting the pattern of Thai's silk surface</p>
+
+</div>
+<form action="/" method="post">
+    {% csrf_token %}
+    <div class="mb-3" align="center">
+        <img id="blah" src="#" alt="" />
+        <input class="form-control" type="file" id="formFileMultiple" multiple onchange="readURL(this);"
+            name="img_input" style="width: 63%; margin-top: 20px;">
+        <label for="formFileMultiple" class="form-label">You can choose multiple file here</label>
+    </div>
+    <div class="fromcontrol">
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="Give we more information"></textarea>
+    </div>
+    <div align="center">
+        <button type="reset" class="btn btn-danger" style="margin: 10px;">Reset</button>
+        <button type="submit" class="btn btn-primary" style="margin: 10px;">Submit</button>
+    </div>
+</form>
