@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'ie_project.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-DATABASE_URL = os.getenv("DATABASE_URL", 'postgres://ml_project_t2bd_user:nSTOcpI1diTcLn09eB3BIqxIZOX4KcqU@dpg-cie242d9aq0ce39i7upg-a.oregon-postgres.render.com/ml_project_t2bd')
+DATABASE_URL = os.getenv("DATABASE_URL", None)
 if DATABASE_URL:
     DATABASES = {
         'default': dj_database_url.parse(DATABASE_URL)
