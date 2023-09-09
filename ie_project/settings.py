@@ -143,3 +143,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #     'API_KEY': os.environ.get('CLOUD_API_KEY', ''),
 #     'API_SECRET': os.environ.get('CLOUD_API_SECRET', '')
 # }
+import os
+MEDIA_URL = '/media/' #UpdatebyUser
+MEDIA_ROOT = os.path.join(BASE_DIR,'media/') #localPath
