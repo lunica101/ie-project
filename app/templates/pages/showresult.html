@@ -7,10 +7,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>showresult</title>
 </head>
+<style>
+    p {
+        border: 2px solid;
+        border-color: #D9FFF9;
+  border-radius: 6px;
+  margin: auto;
+  max-width: 500px;
+
+}
+    </style>
 <body>
     {% include '../components/navbar.html' %}
-    <div class = "backgroundcolor" style="background-color: rgb(186, 251, 190);">
+    <div class = "backgroundcolor" style=" background-color: rgb(186, 251, 190);">
         <h5 align = center>Show result of image</h5>
+        <div name="showre" align="center">
+        <img src="https://cdn.pic.in.th/file/picinth/IMG_36424a619eb7474f7bfe.jpeg" alt="IMG_36424a619eb7474f7bfe.jpeg" style="width:400px;height:500px";/>
+    </div>
+        <p align="center">Accuracy = [0.94]</p>
+        <p align="center">This surface have HmeeRuad = 5</p>
     </div>
 </body>
 </html>
