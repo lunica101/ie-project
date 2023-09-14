@@ -8,12 +8,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>showresult</title>
 </head>
-
-<body  style="background-color: rgb(186, 251, 190);">
+<style>
+    table, th, td {
+      border: 1px solid black;
+      border-radius: 10px;
+    }
+</style>
+<body>
     {% include '../components/navbar.html' %}
-    <div class="backgroundcolor">
-        <h5 align=center>Show result of image</h5>
+    <div class = "backgroundcolor" style=" background-color: rgb(186, 251, 190); flex: 100%;">
+        <h5 align = "center">Show result of image</h5>
+        <div name="showre" align="center">
+        <img src="{{ img }}" alt="IMG_36424a619eb7474f7bfe.jpeg" style="width:400px;height:500px";/>
+        {% include '../components/resulttable.html' %}
     </div>
 </body>
-
 </html>
