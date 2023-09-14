@@ -1,8 +1,13 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
 ie_project/__pycache__/
+ie_project/__pycache__/
 ie_project/__pycache__/settings.cpython-310.pyc
 ie_project/__pycache__/urls.cpython-310.pyc
+ie_project/__pycache__/__init__.cpython-310.pyc
+ie_project/__pycache__/settings.cpython-310.pyc
+ie_project/__pycache__/urls.cpython-310.pyc
+ie_project/__pycache__/wsgi.cpython-310.pyc
 *.py[cod]
 *$py.class
 

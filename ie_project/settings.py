@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'cloudinary_storage',
     'django.contrib.staticfiles',
+    'cloudinary',
     'app'
 ]
 
@@ -76,7 +78,7 @@ WSGI_APPLICATION = 'ie_project.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-DATABASE_URL = os.environ.get("DATABASE_URL", 'postgres://ml_project_t2bd_user:nSTOcpI1diTcLn09eB3BIqxIZOX4KcqU@dpg-cie242d9aq0ce39i7upg-a.oregon-postgres.render.com/ml_project_t2bd')
+DATABASE_URL = os.getenv("DATABASE_URL", None)
 if DATABASE_URL:
     DATABASES = {
         'default': dj_database_url.parse(DATABASE_URL)
@@ -85,11 +87,11 @@ else:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': os.environ.get('DB_NAME', 'ml'),
-            'USER': os.environ.get('DB_USER', 'admin'),
-            'PASSWORD': os.environ.get('DB_USER', 'qwerty1234'),
-            'HOST': os.environ.get('DB_HOST', 'localhost'),
-            'PORT': os.environ.get('DB_PORT', 5432)
+            'NAME': os.getenv('DB_NAME', 'ml'),
+            'USER': os.getenv('DB_USER', 'admin'),
+            'PASSWORD': os.getenv('DB_USER', 'qwerty1234'),
+            'HOST': os.getenv('DB_HOST', 'localhost'),
+            'PORT': os.getenv('DB_PORT', 5432)
         },
     }
 
@@ -130,16 +132,17 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-MEDIA_URL= '/media/'
-MEDIA_ROOT=os.path.join(BASE_DIR, 'media/')
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# CLOUDINARY_STORAGE = {
-#     'CLOUD_NAME': os.environ.get('CLOUD_NAME', ''),
-#     'API_KEY': os.environ.get('CLOUD_API_KEY', ''),
-#     'API_SECRET': os.environ.get('CLOUD_API_SECRET', '')
-# }
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': os.getenv('CLOUD_NAME', 'dwyto1jr4'),
+    'API_KEY': os.getenv('CLOUD_API_KEY', '121655883511222'),
+    'API_SECRET': os.getenv('CLOUD_API_SECRET', '06i4Ye93J1noHzqb5NwrbZFyPfU')
+}
+# DEFAULT_FILE_STORAGE='cloudinary_storage.storage.MediaCloudinaryStorage'
