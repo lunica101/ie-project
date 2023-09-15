@@ -4,12 +4,16 @@ from ultralytics.yolo.engine.results import Results
 from ultralytics.yolo.engine.predictor import BasePredictor
 
 
-def get_yolo_result(img=None):
+def get_yolo_result(path=None, img=None):
     if img is None:
         return {}
 
+    if path is None:
+        path = os.getcwd()
+
     model = YOLO("YoloModel//silk2_EN.pt")
-    predict = model.predict(source=img, save=True, show=False, project=os.getcwd())
+    predict = model.predict(source=img, save=True,
+                            show=False, project=path)
 
     # count each
     result_names = predict[0].names
@@ -30,7 +34,3 @@ def get_yolo_result(img=None):
     path_direc = os.path.join(leen, a)
 
     return count, classic, accu, path_direc
-
-
-w, x, y, z = get_yolo_result(r"test\IMG_8115.JPG")
-print("\n", w, "\n", x, "\n", y, "\n", z)
