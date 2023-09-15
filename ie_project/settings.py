@@ -88,8 +88,8 @@ else:
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
             'NAME': os.getenv('DB_NAME', 'ml'),
-            'USER': os.getenv('DB_USER', 'admin'),
-            'PASSWORD': os.getenv('DB_USER', 'qwerty1234'),
+            'USER': os.getenv('DB_USER', 'postgres'),
+            'PASSWORD': os.getenv('DB_USER', 'pandan2017'),
             'HOST': os.getenv('DB_HOST', 'localhost'),
             'PORT': os.getenv('DB_PORT', 5432)
         },
@@ -146,3 +146,4 @@ CLOUDINARY_STORAGE = {
     'API_SECRET': os.getenv('CLOUD_API_SECRET', '06i4Ye93J1noHzqb5NwrbZFyPfU')
 }
 # DEFAULT_FILE_STORAGE='cloudinary_storage.storage.MediaCloudinaryStorage'
+APPEND_SLASH=False

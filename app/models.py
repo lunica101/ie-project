@@ -1,5 +1,6 @@
 from django.db import models
-
+#save บน cloudinary
+#get value จาก form
 
 class ImageDetection(models.Model):
     image = models.ImageField(null=False, blank=False, upload_to='detection')

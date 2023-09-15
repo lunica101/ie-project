@@ -16,12 +16,12 @@
     <p>Select the picture for detecting the pattern of Thai's silk surface</p>
 
 </div>
-<form action="/result" method="post">
+<form action="result/" method="post">
     {% csrf_token %}
     <div class="mb-3" align="center">
         <img id="blah" src="#" alt="" />
         <input class="form-control" type="file" id="formFileMultiple" multiple onchange="readURL(this);"
-            name="img_input" style="width: 63%; margin-top: 20px;">
+            name="img_input" style="width: 63%; margin-top: 20px;" required>
         <label for="formFileMultiple" class="form-label">You can choose multiple file here</label>
     </div>
     <div class="fromcontrol">

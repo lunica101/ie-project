@@ -11,12 +11,12 @@ data เทียบ Field ใน class model นั้นๆ implementมาใ
 
 """
 #saving ImageDetection
-class savingmodels(ModelForm):
+class ImageDetectionForm(ModelForm):
     class Meta:
          model = ImageDetection 
          fields = ["image", "description"]
 
-class savingImageSummery(ModelForm):
+class ImageSummaryForm(ModelForm):
      class Meta:
          model = ImageSummery 
          fields = ["image_detect","image_type","accuracy"]
