@@ -1,7 +1,5 @@
 from ultralytics import YOLO
 import os
-from ultralytics.yolo.engine.results import Results
-from ultralytics.yolo.engine.predictor import BasePredictor
 
 
 def get_yolo_result(path=None, img=None):
