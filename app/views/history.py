@@ -20,5 +20,4 @@ def history_page(request):
              "slackthread" : ImageSummery.objects.filter(image_detect=image_detection , image_type=6).count(),
         }
         datas.append(data)
-    print(datas)
     return render(request, 'pages/history.html',{"datas" : datas})

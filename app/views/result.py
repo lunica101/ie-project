@@ -34,7 +34,7 @@ def result_page(request):
 
     public_id = f'media/detection/{uuid.uuid4().hex[:10]}'
     upload_cloud = cloudinary.uploader.upload(path_direc,public_id=public_id)
-    print(upload_cloud['url'])
+    # print(upload_cloud['url'])
     # print(upload_cloud)
     
     description =request.POST['description']
@@ -44,7 +44,6 @@ def result_page(request):
     
     for i ,cls in enumerate(classic):
         a = accuracy[i]
-        print(i, cls, a)    
         ImageSummery.objects.create(image_detect=imagedetection, image_type=cls, accuracy=a )
     os.remove(path_direc)
     os.remove(file_path)
