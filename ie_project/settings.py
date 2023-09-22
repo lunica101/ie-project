@@ -14,7 +14,7 @@ from pathlib import Path
 import dj_database_url
 
 import os
-
+import cloudinary
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -145,5 +145,7 @@ CLOUDINARY_STORAGE = {
     'API_KEY': os.getenv('CLOUD_API_KEY', '121655883511222'),
     'API_SECRET': os.getenv('CLOUD_API_SECRET', '06i4Ye93J1noHzqb5NwrbZFyPfU')
 }
-# DEFAULT_FILE_STORAGE='cloudinary_storage.storage.MediaCloudinaryStorage'
+DEFAULT_FILE_STORAGE='cloudinary_storage.storage.MediaCloudinaryStorage' #เก็บใน detectionใน cloudinary
 APPEND_SLASH=False
+YOLO_MODEL = os.path.join(BASE_DIR,'silk','YoloModel','silk2_EN.pt')
+YOLO_EXAMPLE_PATH = os.path.join(MEDIA_ROOT,'temp')

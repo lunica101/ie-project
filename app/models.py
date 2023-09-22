@@ -3,8 +3,8 @@ from django.db import models
 #get value จาก form
 
 class ImageDetection(models.Model):
-    image = models.ImageField(null=False, blank=False, upload_to='detection')
-    description = models.TextField(null=True, blank=True)
+    image = models.TextField(null=False, blank=False,max_length=255) #รับค่าเป็น img_input
+    description = models.TextField(null=True, blank=True) #รับค่าเป็น text_input
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
