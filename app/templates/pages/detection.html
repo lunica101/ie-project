@@ -1,37 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thai Silk DETECTION</title>
-    {% include '../components/mdb.html' %}
-  </head>
+<head>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thai Silk DETECTION</title>
+  {% include '../components/mdb.html' %}
+</head>
 
-  <body style="background-color: rgb(186, 251, 190);">
-    {% include '../components/navbar.html' %}
-    <div style="background-color: white; align-items: center; margin: auto; width: 60%; margin-top: 20px; border-radius: 20px; padding-top: 20px;">
-      <div class="container">
-          <h1 align="center">Thai Silk Image Detection</h1>
-          <h5 align="center">This website is provided the Patterns and Defects</h5>
-      </div>
-      <div>
-        {% include '../components/form.html' %}
-      </div>
+<body style="background-color: #CBFDCC ;">
+  {% include '../components/navbar.html' %}
+  <div style="margin-top: 30px;">
+    <div>
+      <h1 align="center">Thai Silk Image Detection</h1>
+      <h5 align="center">This website is provided the Patterns and Defects</h5>
+      {% include '../components/form.html' %}
     </div>
-  </body>
+  </div>
+</body>
 
-  <script>
-    function readURL(input) {
-      if (input.files && input.files[0]) {
-        let reader = new FileReader();
-        reader.onload = function (e) {
-          $('#blah').attr('src', e.target.result).width(150).height(200);
-        };
-        reader.readAsDataURL(input.files[0]);
-      }
+<script>
+  function readURL(input) {
+    if (input.files && input.files[0]) {
+      let reader = new FileReader();
+      reader.onload = function (e) {
+        $('#blah').attr('src', e.target.result).width(150).height(200);
+      };
+      reader.readAsDataURL(input.files[0]);
     }
-  </script>
+  }
+</script>
 
 </html>

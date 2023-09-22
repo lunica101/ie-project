@@ -8,12 +8,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>showresult</title>
 </head>
-
-<body  style="background-color: rgb(186, 251, 190);">
+<style>
+    table, th, td {
+      border: 1px solid black;
+      border-radius: 10px;
+    }
+</style>
+<body  style=" background-color:#CBFDCC;">
     {% include '../components/navbar.html' %}
-    <div class="backgroundcolor">
-        <h5 align=center>Show result of image</h5>
+    <div class = "backgroundcolor">
+        <h5 align = "center">Show result of image</h5>
+        <div name="showre" align="center">
+        <img src="{{image}}" alt ="Detected image" style="width:400px;height:500px";/>
+        <p>{{ description }}</p>
+        {% include '../components/resulttable.html' %}
     </div>
-</body>
 
+</body>
 </html>

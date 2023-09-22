@@ -1,0 +1,15 @@
+<table style="width: 80%; margin-top: 10px; border: 2px solid black; background-color: white; "
+     class="table">
+     <tr>
+          <td>Number (ลำดับที่)</td>
+          <td>Type (ลักษณะ)</td>
+          <td>Accuracy (ความถูกต้อง)</td>
+     </tr>
+     {% for summary in summary_list%}
+     <tr>
+          <td>{{ forloop.counter }}</td>
+          <td>{{ summary.get_image_type_display }}</td>
+          <td>{{ summary.accuracy }}</td>
+     </tr>
+     {% endfor %}
+</table>
