@@ -1,25 +1,27 @@
-from ultralytics import YOLO
 import os
+
+from ultralytics import YOLO
 from django.conf import settings
 
-def get_yolo_result(path=None, img=None):
+
+def get_yolo_result(project=None, img=None):
     if img is None:
         return {}
 
-    if path is None:
-        path = settings.YOLO_EXAMPLE_PATH
+    if project is None:
+        project = settings.YOLO_EXAMPLE_PATH
 
     model = YOLO(settings.YOLO_MODEL)
-    predict = model.predict(source=img, save=True, show=False, project=path,exist_ok = True)
+    predict = model.predict(source=img, save=True, show=False, project=project, exist_ok=True)
 
-    classic = predict[0].boxes.cls
-    classic = [int(x.item()) for x in classic]
+    cls_list = predict[0].boxes.cls
+    cls_list = [int(x.item()) for x in cls_list]
     
-    accuracy = predict[0].boxes.conf
-    accuracy = [round(float(x.item()), 2) for x in accuracy]
+    accuracy_list = predict[0].boxes.conf
+    accuracy_list = [round(float(x.item()), 2) for x in accuracy_list]
     
-    path_direc = predict[0].save_dir
-    a = os.path.basename(img)
-    path_direc = os.path.join(path_direc, a)
+    diectory = predict[0].save_dir
+    image_name = os.path.basename(img)
+    diectory = os.path.join(diectory, image_name)
 
-    return classic, accuracy, path_direc #count
+    return cls_list, accuracy_list, diectory
