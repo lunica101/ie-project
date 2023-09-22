@@ -1,6 +1,7 @@
 import os
 import uuid
 import cloudinary
+import cloudinary.uploader
 
 from django.shortcuts import render , redirect
 from django.conf import settings
@@ -25,12 +26,12 @@ def result_page(request):
     cloudinary.config( 
         cloud_name=settings.CLOUDINARY_STORAGE['CLOUD_NAME'], 
         api_key=settings.CLOUDINARY_STORAGE['API_KEY'], 
-        api_secret=settings.CLOUDINARY_STORAGE['CLOUD_API_SECRET'],
+        api_secret=settings.CLOUDINARY_STORAGE['API_SECRET'],
         secure=True 
     )
 
     public_id = f'media/detection/{uuid.uuid4().hex[:10]}'
-    upload_cloud = settings.cloudinary.uploader.upload(diectory, public_id=public_id)
+    upload_cloud = cloudinary.uploader.upload(diectory, public_id=public_id)
     
     description = request.POST['description']
     imagedetection = ImageDetection.objects.create(image=upload_cloud['url'], description=description)
