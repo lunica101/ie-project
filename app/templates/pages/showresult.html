@@ -14,13 +14,15 @@
       border-radius: 10px;
     }
 </style>
-<body>
+<body  style=" background-color:#CBFDCC;">
     {% include '../components/navbar.html' %}
-    <div class = "backgroundcolor" style=" background-color: rgb(186, 251, 190); flex: 100%;">
+    <div class = "backgroundcolor">
         <h5 align = "center">Show result of image</h5>
         <div name="showre" align="center">
-        <img src="{{ img }}" alt="IMG_36424a619eb7474f7bfe.jpeg" style="width:400px;height:500px";/>
+        <img src="{{image}}" alt ="Detected image" style="width:400px;height:500px";/>
+        <p>{{ description }}</p>
         {% include '../components/resulttable.html' %}
     </div>
+
 </body>
 </html>

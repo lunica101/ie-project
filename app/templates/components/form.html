@@ -16,16 +16,16 @@
     <p>Select the picture for detecting the pattern of Thai's silk surface</p>
 
 </div>
-<form action="/result" method="post">
+<form action="result/" method="post" enctype="multipart/form-data">
     {% csrf_token %}
-    <div class="mb-3" align="center">
+    {{ backend_form }}
+    <div class="mb-3" align="center" style="border: none;">
         <img id="blah" src="#" alt="" />
-        <input class="form-control" type="file" id="formFileMultiple" multiple onchange="readURL(this);"
-            name="img_input" style="width: 63%; margin-top: 20px;">
-        <label for="formFileMultiple" class="form-label">You can choose multiple file here</label>
+        <input class="form-control" type="file" id="formFileMultiple" multiple onchange="readURL(this);" name="image" style="width: 63%; margin-top: 20px;" required />
+        <label for="formFileMultiple" class="form-label">You can choose file here</label>
     </div>
     <div class="fromcontrol">
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="Give we more information"></textarea>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="Give we more information" name="description"></textarea>
     </div>
     <div align="center">
         <button type="reset" class="btn btn-danger" style="margin: 10px;">Reset</button>

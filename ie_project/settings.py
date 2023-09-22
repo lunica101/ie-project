@@ -14,6 +14,8 @@ from pathlib import Path
 import dj_database_url
 
 import os
+import cloudinary
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -41,7 +43,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'cloudinary_storage',
     'django.contrib.staticfiles',
-    'cloudinary',
     'app'
 ]
 
@@ -75,6 +76,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'ie_project.wsgi.application'
 
+APPEND_SLASH=False
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
@@ -145,4 +147,7 @@ CLOUDINARY_STORAGE = {
     'API_KEY': os.getenv('CLOUD_API_KEY', '121655883511222'),
     'API_SECRET': os.getenv('CLOUD_API_SECRET', '06i4Ye93J1noHzqb5NwrbZFyPfU')
 }
-# DEFAULT_FILE_STORAGE='cloudinary_storage.storage.MediaCloudinaryStorage'
+DEFAULT_FILE_STORAGE='cloudinary_storage.storage.MediaCloudinaryStorage'
+
+YOLO_MODEL = os.path.join(BASE_DIR,'silk','YoloModel','silk2_EN.pt')
+YOLO_EXAMPLE_PATH = os.path.join(MEDIA_ROOT,'temp')

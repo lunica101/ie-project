@@ -1,0 +1,26 @@
+<table style="width: 70%; margin-top: 20px; border: 1px solid black;background-color: white;" class="table" >
+     <tr>
+          <td>No.</td>
+          <td>Detection Image</td>
+          <td>Numbers of Hmeekhor</td>
+          <td>Numbers of Heart</td>
+          <td>Numbers of HmorNam</td>
+          <td>Numbers of HmeeRuad</td>
+          <td>Numbers of BrokenThread</td>
+          <td>Numbers of HitchSilk</td>
+          <td>Numbers of SlackThread</td>
+     </tr>
+    {% for data in datas %}
+    <tr>
+          <td>{{ forloop.counter }}</td>
+          <td><img src= "{{ data.img }}" alt="Image"style="width:200px;height:200px";/></td>
+          <td>{{ data.hmeekhor }} </td>
+          <td>{{ data.heart }}</td>
+          <td>{{ data.hmornam }}</td>
+          <td>{{ data.hmeeruad }}</td>
+          <td>{{ data.brokenthread }}</td>
+          <td>{{ data.hitchsilk }}</td>
+          <td>{{ data.slackthread }}</td>
+    </tr>
+    {% endfor %}
+ </table>
