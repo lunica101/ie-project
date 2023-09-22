@@ -19,7 +19,7 @@
 <form action="result/" method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {{ backend_form }}
-    <div class="mb-3" align="center" >
+    <div class="mb-3" align="center" style="border: none;">
         <img id="blah" src="#" alt="" />
         <input class="form-control" type="file" id="formFileMultiple" multiple onchange="readURL(this);" name="image" style="width: 63%; margin-top: 20px;" required />
         <label for="formFileMultiple" class="form-label">You can choose file here</label>
